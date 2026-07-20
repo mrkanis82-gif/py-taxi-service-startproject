@@ -6,11 +6,12 @@ from taxi.models import Car, Driver, Manufacturer
 
 @admin.register(Car)
 class CarAdmin(admin.ModelAdmin):
+    list_filter = ("manufacturer",)
     search_fields = ("manufacturer__name", "model")
 
 
 @admin.register(Manufacturer)
-class ManufactureAdmin(admin.ModelAdmin):
+class ManufacturerAdmin(admin.ModelAdmin):
     pass
 
 
